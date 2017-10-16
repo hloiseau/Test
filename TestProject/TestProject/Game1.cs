@@ -20,6 +20,7 @@ namespace TestProject
         Rectangle _rectBackground;
         ParallaxingBackground _bgLayer1;
         ParallaxingBackground _bgLayer2;
+        int i = 0;
 
         public Game1()
         {
@@ -55,8 +56,8 @@ namespace TestProject
 
             Animation playerAnimation = new Animation();
             Texture2D playerTexture = Content.Load<Texture2D>("Bear");
-            playerAnimation.Initialize(playerTexture, Vector2.Zero, 32, 32, 0, 3, 4, 300, Color.White, 2f, true);
-            Vector2 playerPosition = new Vector2(GraphicsDevice.Viewport.TitleSafeArea.X,GraphicsDevice.Viewport.TitleSafeArea.Y + GraphicsDevice.Viewport.TitleSafeArea.Height / 2);
+            playerAnimation.Initialize(playerTexture, Vector2.Zero, 32, 32, 0, 1, 4, 100, Color.White, 2f, true);
+            Vector2 playerPosition = new Vector2(GraphicsDevice.Viewport.TitleSafeArea.X, GraphicsDevice.Viewport.TitleSafeArea.Y + GraphicsDevice.Viewport.TitleSafeArea.Height / 2);
             _player.Initialize(playerAnimation, playerPosition);
             // Load the parallaxing background
             _bgLayer1.Initialize(Content, "Area4Capsules4", GraphicsDevice.Viewport.Width, GraphicsDevice.Viewport.Height, -1);
@@ -77,25 +78,39 @@ namespace TestProject
         private void PlayerUpdate(GameTime gameTime)
         {
             _player.Update(gameTime);
-            if (_currentKeyboardState.IsKeyDown(Keys.Left))
+            if (_currentKeyboardState.IsKeyDown(Keys.Left) || _currentKeyboardState.IsKeyDown(Keys.Q))
             {
-                _player._position.X -= _playerMoveSpeed;
+                _player._position.X -= _playerMoveSpeed / 2;
             }
-            if (_currentKeyboardState.IsKeyDown(Keys.Right))
+            if (_currentKeyboardState.IsKeyDown(Keys.Right) || _currentKeyboardState.IsKeyDown(Keys.D))
             {
-                _player._position.X += _playerMoveSpeed;
+                _player._position.X += _playerMoveSpeed / 2;
             }
-            if (_currentKeyboardState.IsKeyDown(Keys.Up))
+            if (_currentKeyboardState.IsKeyDown(Keys.Up) || _currentKeyboardState.IsKeyDown(Keys.Z))
             {
                 _player._position.Y -= _playerMoveSpeed;
             }
-            if (_currentKeyboardState.IsKeyDown(Keys.Down))
+            if (_currentKeyboardState.IsKeyDown(Keys.Down) || _currentKeyboardState.IsKeyDown(Keys.S))
             {
                 _player._position.Y += _playerMoveSpeed;
             }
-            _player._position.X = MathHelper.Clamp(_player._position.X, 1, GraphicsDevice.Viewport.Width - _player.Width);
+            if (_currentKeyboardState.IsKeyDown(Keys.Space))
+            {
+                if (i < 10)
+                {
+                    _player._position.Y -= _playerMoveSpeed;
+                    i++;
+                }
+                else
+                {
+                    i--;
+                }
+            }
+            _player._position.Y += _playerMoveSpeed / 2;
 
-            _player._position.Y = MathHelper.Clamp(_player._position.Y, 1, GraphicsDevice.Viewport.Height - _player.Height);
+            _player._position.X = MathHelper.Clamp(_player._position.X, _player.Width, GraphicsDevice.Viewport.Width - _player.Width);
+
+            _player._position.Y = MathHelper.Clamp(_player._position.Y, _player.Height, GraphicsDevice.Viewport.Height - _player.Height);
         }
         /// <summary>
         /// Allows the game to run logic such as updating the world,
@@ -109,7 +124,7 @@ namespace TestProject
 
             // Save the previous state of the keyboard  so we can determine single key presses
             _previousKeyboardState = _currentKeyboardState;
-            
+
             // Read the current state of the keyboard and gamepad and store it
             _currentKeyboardState = Keyboard.GetState();
 
@@ -141,7 +156,7 @@ namespace TestProject
             _spriteBatch.Draw(_mainBackground, _rectBackground, Color.White);
 
             // Draw the moving background
-            
+
 
             _spriteBatch.End();
 
