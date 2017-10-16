@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <PipelineBuildEvent xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
-  <SourceFile>C:/Users/hugo/DEV/TestProject/TestProject/Content/Area4Capsules4.png</SourceFile>
-  <SourceTime>2017-10-12T15:31:42.0841146+02:00</SourceTime>
-  <DestFile>C:/Users/hugo/DEV/TestProject/TestProject/Content/bin/Windows/Area4Capsules4.xnb</DestFile>
-  <DestTime>2017-10-12T21:12:15.5113347+02:00</DestTime>
+  <SourceFile>D:/test_git/Test/TestProject/TestProject/Content/Area4Capsules4.png</SourceFile>
+  <SourceTime>2017-10-16T09:36:58.1866833+02:00</SourceTime>
+  <DestFile>D:/test_git/Test/TestProject/TestProject/Content/bin/Windows/Area4Capsules4.xnb</DestFile>
+  <DestTime>2017-10-16T11:33:03.9305532+02:00</DestTime>
   <Importer>TextureImporter</Importer>
   <ImporterTime>2017-03-01T16:05:36+01:00</ImporterTime>
   <Processor>TextureProcessor</Processor>
