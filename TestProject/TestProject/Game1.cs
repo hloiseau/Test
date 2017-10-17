@@ -90,10 +90,6 @@ namespace TestProject
             {
                 _player._position.Y -= _playerMoveSpeed;
             }
-            if (_currentKeyboardState.IsKeyDown(Keys.Down) || _currentKeyboardState.IsKeyDown(Keys.S))
-            {
-                _player._position.Y += _playerMoveSpeed;
-            }
             if (_currentKeyboardState.IsKeyDown(Keys.Space))
             {
                 if (i < 10)
