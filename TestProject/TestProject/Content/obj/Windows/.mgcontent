@@ -4,8 +4,8 @@
   <Platform>Windows</Platform>
   <Config />
   <SourceFiles>
-    <File>D:/test_git/Test/TestProject/TestProject/Content/Area4Capsules4.png</File>
-    <File>D:/test_git/Test/TestProject/TestProject/Content/Area4PurpleBushColumn.png</File>
-    <File>D:/test_git/Test/TestProject/TestProject/Content/Bear.png</File>
+    <File>C:/Users/hugo/DEV/TestProject/TestProject/Content/Area4Capsules4.png</File>
+    <File>C:/Users/hugo/DEV/TestProject/TestProject/Content/Area4PurpleBushColumn.png</File>
+    <File>C:/Users/hugo/DEV/TestProject/TestProject/Content/Bear.png</File>
   </SourceFiles>
 </SourceFileCollection>
