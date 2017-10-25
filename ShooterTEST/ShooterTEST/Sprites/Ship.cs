@@ -24,7 +24,7 @@ namespace ShooterTEST.Sprites
             _currentKey = Keyboard.GetState();
             _currentMouse = Mouse.GetState();
 
-             Direction = new Vector2(1, (_currentMouse.Y - Position.Y)/ 500);
+             Direction = new Vector2((_currentMouse.X - Position.X) / 500, (_currentMouse.Y - Position.Y) / 500);
 
             /*
             if (_currentKey.IsKeyDown(Keys.A))

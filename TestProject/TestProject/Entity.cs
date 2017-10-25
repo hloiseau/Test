@@ -5,16 +5,16 @@ using Microsoft.Xna.Framework.Graphics;
 
 namespace TestProject
 {
-    class Player
+    class Entity
     {
         public Vector2 _position;
         bool _active;
         int _health;
-        Animation _playerAnimation;
+        Animation _animation;
 
         public void Initialize(Animation animation, Vector2 position)
         {
-            _playerAnimation = animation;
+            _animation = animation;
             // Set the starting position of the player around the middle of the screen and to the back
             _position = position;
             // Set the player to be active
@@ -24,21 +24,21 @@ namespace TestProject
         }
         public void Update(GameTime gameTime)
         {
-            _playerAnimation.Position = _position;
-            _playerAnimation.Update(gameTime);
+            _animation.Position = _position;
+            _animation.Update(gameTime);
         }
         public void Draw(SpriteBatch spriteBatch)
         {
-            _playerAnimation.Draw(spriteBatch);
+            _animation.Draw(spriteBatch);
         }
 
         public int Width
         {
-            get { return _playerAnimation.FrameWidth; }
+            get { return _animation.FrameWidth; }
         }
         public int Height
         {
-            get { return _playerAnimation.FrameHeight; }
+            get { return _animation.FrameHeight; }
         }
         internal Vector2 Position
         {

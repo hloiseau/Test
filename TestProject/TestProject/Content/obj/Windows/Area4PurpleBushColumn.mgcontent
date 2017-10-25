@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <PipelineBuildEvent xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
   <SourceFile>C:/Users/hugo/DEV/TestProject/TestProject/Content/Area4PurpleBushColumn.png</SourceFile>
-  <SourceTime>2017-10-12T15:31:45.9864928+02:00</SourceTime>
+  <SourceTime>2017-10-20T12:24:39.160714+02:00</SourceTime>
   <DestFile>C:/Users/hugo/DEV/TestProject/TestProject/Content/bin/Windows/Area4PurpleBushColumn.xnb</DestFile>
-  <DestTime>2017-10-12T21:12:15.5554521+02:00</DestTime>
+  <DestTime>2017-10-20T12:59:07.5334021+02:00</DestTime>
   <Importer>TextureImporter</Importer>
   <ImporterTime>2017-03-01T16:05:36+01:00</ImporterTime>
   <Processor>TextureProcessor</Processor>

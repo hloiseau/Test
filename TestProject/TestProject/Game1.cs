@@ -11,7 +11,7 @@ namespace TestProject
     {
         GraphicsDeviceManager _graphics;
         SpriteBatch _spriteBatch;
-        Player _player;
+        Entity _player;
         KeyboardState _currentKeyboardState;
         KeyboardState _previousKeyboardState;
         float _playerMoveSpeed;
@@ -20,6 +20,15 @@ namespace TestProject
         Rectangle _rectBackground;
         ParallaxingBackground _bgLayer1;
         ParallaxingBackground _bgLayer2;
+        Animation _playerAnimation;
+
+        Entity _platform;
+
+
+        bool _jumping; //Is the character jumping?
+        float _startY; 
+        float _jumpspeed; //startY to tell us //where it lands, jumpspeed to see how fast it jumps
+        
 
         public Game1()
         {
@@ -35,11 +44,13 @@ namespace TestProject
         /// </summary>
         protected override void Initialize()
         {
-            _player = new Player();
+            _player = new Entity();
+            _platform = new Entity();
             //Background
             _bgLayer1 = new ParallaxingBackground();
             _bgLayer2 = new ParallaxingBackground();
             _playerMoveSpeed = 8.0f;
+            
             base.Initialize();
         }
 
@@ -53,16 +64,27 @@ namespace TestProject
             _spriteBatch = new SpriteBatch(GraphicsDevice);
             // Load the player resources
 
-            Animation playerAnimation = new Animation();
+            _playerAnimation = new Animation();
             Texture2D playerTexture = Content.Load<Texture2D>("Bear");
-            playerAnimation.Initialize(playerTexture, Vector2.Zero, 32, 32, 0, 3, 4, 300, Color.White, 2f, true);
-            Vector2 playerPosition = new Vector2(GraphicsDevice.Viewport.TitleSafeArea.X,GraphicsDevice.Viewport.TitleSafeArea.Y + GraphicsDevice.Viewport.TitleSafeArea.Height / 2);
-            _player.Initialize(playerAnimation, playerPosition);
+            _playerAnimation.Initialize(playerTexture, Vector2.Zero, 32, 32, 0, 1, 4, 100, Color.White, 2f, true);
+            Vector2 playerPosition = new Vector2(GraphicsDevice.Viewport.TitleSafeArea.X, GraphicsDevice.Viewport.TitleSafeArea.Y + GraphicsDevice.Viewport.TitleSafeArea.Height / 2);
+            _player.Initialize(_playerAnimation, playerPosition);
+
+            Animation platformAnimation = new Animation();
+            Texture2D platformTexture = Content.Load<Texture2D>("Bear");
+            platformAnimation.Initialize(platformTexture, Vector2.Zero, 32, 32, 0, 1, 4, 100, Color.White, 2f, true);
+            Vector2 platformPosition = new Vector2(GraphicsDevice.Viewport.TitleSafeArea.X +50, GraphicsDevice.Viewport.TitleSafeArea.Y + GraphicsDevice.Viewport.TitleSafeArea.Height /2 +50);
+            _platform.Initialize(platformAnimation, platformPosition);
+
             // Load the parallaxing background
             _bgLayer1.Initialize(Content, "Area4Capsules4", GraphicsDevice.Viewport.Width, GraphicsDevice.Viewport.Height, -1);
             _bgLayer2.Initialize(Content, "Area4PurpleBushColumn", GraphicsDevice.Viewport.Width, GraphicsDevice.Viewport.Height, -2);
 
             _mainBackground = Content.Load<Texture2D>("Area4PurpleBushColumn");
+
+            _startY = GraphicsDevice.Viewport.Height;//Starting position
+            _jumping = false;//Init jumping to false
+            _jumpspeed = 0;//Default no speed
         }
 
         /// <summary>
@@ -74,28 +96,63 @@ namespace TestProject
             // TODO: Unload any non ContentManager content here
         }
 
+        internal void Collision(Entity entity)
+        {
+            Rectangle rectangle1 = new Rectangle((int)_player.Position.X, (int)_player.Position.Y, _player.Width, _player.Height);
+            Rectangle rectangle2 = new Rectangle((int)entity.Position.X, (int)entity.Position.Y, entity.Width, entity.Height);
+
+            if (rectangle1.Intersects(rectangle2))
+            {
+                _player._position.Y = rectangle2.Top - _player.Height;
+            }
+        }
+
         private void PlayerUpdate(GameTime gameTime)
         {
+            int ori = 0;
             _player.Update(gameTime);
-            if (_currentKeyboardState.IsKeyDown(Keys.Left))
+            if (_currentKeyboardState.IsKeyDown(Keys.Left) || _currentKeyboardState.IsKeyDown(Keys.Q))
             {
-                _player._position.X -= _playerMoveSpeed;
+                _player._position.X -= _playerMoveSpeed / 2;
+                ori = 3;
             }
-            if (_currentKeyboardState.IsKeyDown(Keys.Right))
+            if (_currentKeyboardState.IsKeyDown(Keys.Right) || _currentKeyboardState.IsKeyDown(Keys.D))
             {
-                _player._position.X += _playerMoveSpeed;
+                _player._position.X += _playerMoveSpeed / 2;
+                ori = 1;
             }
-            if (_currentKeyboardState.IsKeyDown(Keys.Up))
+            if (_currentKeyboardState.IsKeyDown(Keys.Up) || _currentKeyboardState.IsKeyDown(Keys.Z))
             {
                 _player._position.Y -= _playerMoveSpeed;
             }
-            if (_currentKeyboardState.IsKeyDown(Keys.Down))
-            {
-                _player._position.Y += _playerMoveSpeed;
-            }
-            _player._position.X = MathHelper.Clamp(_player._position.X, 1, GraphicsDevice.Viewport.Width - _player.Width);
 
-            _player._position.Y = MathHelper.Clamp(_player._position.Y, 1, GraphicsDevice.Viewport.Height - _player.Height);
+            if (_jumping)
+            {
+                _player._position.Y += _jumpspeed;//Making it go up
+                _jumpspeed += 1;//Some math (explained later)
+                if (_player._position.Y >= _startY)
+                //If it's farther than ground
+                {
+                    _player._position.Y = _startY;//Then set it on
+                    _jumping = false;
+                }
+            }
+            else
+            {
+                if (_currentKeyboardState.IsKeyDown(Keys.Space))
+                {
+                    _jumping = true;
+                    _jumpspeed = -25;//Give it upward thrust
+                }
+            }
+
+            _playerAnimation.CurrentFrameLin = ori;
+
+            _player._position.Y += _playerMoveSpeed / 2;
+
+            _player._position.X = MathHelper.Clamp(_player._position.X, _player.Width, GraphicsDevice.Viewport.Width - _player.Width);
+
+            _player._position.Y = MathHelper.Clamp(_player._position.Y, _player.Height, GraphicsDevice.Viewport.Height - _player.Height);
         }
         /// <summary>
         /// Allows the game to run logic such as updating the world,
@@ -109,13 +166,15 @@ namespace TestProject
 
             // Save the previous state of the keyboard  so we can determine single key presses
             _previousKeyboardState = _currentKeyboardState;
-            
+
             // Read the current state of the keyboard and gamepad and store it
             _currentKeyboardState = Keyboard.GetState();
 
             //Update the player
             PlayerUpdate(gameTime);
+            //_platform.Update(gameTime);
 
+            Collision(_platform);
             // Update the parallaxing background
             _bgLayer1.Update(gameTime);
             _bgLayer2.Update(gameTime);
@@ -136,12 +195,12 @@ namespace TestProject
             _bgLayer1.Draw(_spriteBatch);
 
             _player.Draw(_spriteBatch);
+            _platform.Draw(_spriteBatch);
 
             //Draw the Main Background Texture
             _spriteBatch.Draw(_mainBackground, _rectBackground, Color.White);
 
             // Draw the moving background
-            
 
             _spriteBatch.End();
 
