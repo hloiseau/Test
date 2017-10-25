@@ -50,3 +50,29 @@ G:\Dropbox\monogame\test projects\ShooterTEST\ShooterTEST\bin\Windows\x86\Debug\
 G:\Dropbox\monogame\test projects\ShooterTEST\ShooterTEST\bin\Windows\x86\Debug\SharpDX.Direct3D9.xml
 G:\Dropbox\monogame\test projects\ShooterTEST\ShooterTEST\obj\x86\Debug\ShooterTEST.exe
 G:\Dropbox\monogame\test projects\ShooterTEST\ShooterTEST\obj\x86\Debug\ShooterTEST.pdb
+C:\Users\melod\Documents\Dev\TestProjet\Test\ShooterTEST\ShooterTEST\bin\Windows\x86\Debug\Content\bullet.xnb
+C:\Users\melod\Documents\Dev\TestProjet\Test\ShooterTEST\ShooterTEST\bin\Windows\x86\Debug\Content\caracter.xnb
+C:\Users\melod\Documents\Dev\TestProjet\Test\ShooterTEST\ShooterTEST\bin\Windows\x86\Debug\ShooterTEST.exe
+C:\Users\melod\Documents\Dev\TestProjet\Test\ShooterTEST\ShooterTEST\bin\Windows\x86\Debug\ShooterTEST.pdb
+C:\Users\melod\Documents\Dev\TestProjet\Test\ShooterTEST\ShooterTEST\bin\Windows\x86\Debug\MonoGame.Framework.dll
+C:\Users\melod\Documents\Dev\TestProjet\Test\ShooterTEST\ShooterTEST\bin\Windows\x86\Debug\SharpDX.MediaFoundation.dll
+C:\Users\melod\Documents\Dev\TestProjet\Test\ShooterTEST\ShooterTEST\bin\Windows\x86\Debug\SharpDX.dll
+C:\Users\melod\Documents\Dev\TestProjet\Test\ShooterTEST\ShooterTEST\bin\Windows\x86\Debug\SharpDX.XAudio2.dll
+C:\Users\melod\Documents\Dev\TestProjet\Test\ShooterTEST\ShooterTEST\bin\Windows\x86\Debug\SharpDX.DXGI.dll
+C:\Users\melod\Documents\Dev\TestProjet\Test\ShooterTEST\ShooterTEST\bin\Windows\x86\Debug\SharpDX.Direct3D11.dll
+C:\Users\melod\Documents\Dev\TestProjet\Test\ShooterTEST\ShooterTEST\bin\Windows\x86\Debug\SharpDX.Direct2D1.dll
+C:\Users\melod\Documents\Dev\TestProjet\Test\ShooterTEST\ShooterTEST\bin\Windows\x86\Debug\SharpDX.XInput.dll
+C:\Users\melod\Documents\Dev\TestProjet\Test\ShooterTEST\ShooterTEST\bin\Windows\x86\Debug\SharpDX.Direct3D9.dll
+C:\Users\melod\Documents\Dev\TestProjet\Test\ShooterTEST\ShooterTEST\bin\Windows\x86\Debug\MonoGame.Framework.xml
+C:\Users\melod\Documents\Dev\TestProjet\Test\ShooterTEST\ShooterTEST\bin\Windows\x86\Debug\SharpDX.MediaFoundation.xml
+C:\Users\melod\Documents\Dev\TestProjet\Test\ShooterTEST\ShooterTEST\bin\Windows\x86\Debug\SharpDX.xml
+C:\Users\melod\Documents\Dev\TestProjet\Test\ShooterTEST\ShooterTEST\bin\Windows\x86\Debug\SharpDX.XAudio2.xml
+C:\Users\melod\Documents\Dev\TestProjet\Test\ShooterTEST\ShooterTEST\bin\Windows\x86\Debug\SharpDX.DXGI.xml
+C:\Users\melod\Documents\Dev\TestProjet\Test\ShooterTEST\ShooterTEST\bin\Windows\x86\Debug\SharpDX.Direct3D11.xml
+C:\Users\melod\Documents\Dev\TestProjet\Test\ShooterTEST\ShooterTEST\bin\Windows\x86\Debug\SharpDX.Direct2D1.xml
+C:\Users\melod\Documents\Dev\TestProjet\Test\ShooterTEST\ShooterTEST\bin\Windows\x86\Debug\SharpDX.XInput.xml
+C:\Users\melod\Documents\Dev\TestProjet\Test\ShooterTEST\ShooterTEST\bin\Windows\x86\Debug\SharpDX.Direct3D9.xml
+C:\Users\melod\Documents\Dev\TestProjet\Test\ShooterTEST\ShooterTEST\obj\x86\Debug\ShooterTEST.csprojResolveAssemblyReference.cache
+C:\Users\melod\Documents\Dev\TestProjet\Test\ShooterTEST\ShooterTEST\obj\x86\Debug\ShooterTEST.csproj.CoreCompileInputs.cache
+C:\Users\melod\Documents\Dev\TestProjet\Test\ShooterTEST\ShooterTEST\obj\x86\Debug\ShooterTEST.exe
+C:\Users\melod\Documents\Dev\TestProjet\Test\ShooterTEST\ShooterTEST\obj\x86\Debug\ShooterTEST.pdb

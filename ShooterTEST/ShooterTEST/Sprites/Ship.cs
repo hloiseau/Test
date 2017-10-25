@@ -24,7 +24,12 @@ namespace ShooterTEST.Sprites
             _currentKey = Keyboard.GetState();
             _currentMouse = Mouse.GetState();
 
-             Direction = new Vector2(1, (_currentMouse.Y - Position.Y)/ 500);
+            distance.X = _currentMouse.X - Position.X;
+            distance.Y = _currentMouse.Y - Position.Y;
+            
+           Direction = new Vector2 ((float)Math.Cos(_rotation), (float)Math.Sin(_rotation));
+
+            _rotation = (float)Math.Atan2(distance.Y, distance.X);
 
             /*
             if (_currentKey.IsKeyDown(Keys.A))
