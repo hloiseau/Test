@@ -4,7 +4,8 @@
   <Platform>Windows</Platform>
   <Config />
   <SourceFiles>
-    <File>C:/Users/hugo/DEV/Test.Git/ShooterTEST/ShooterTEST/Content/bullet.PNG</File>
-    <File>C:/Users/hugo/DEV/Test.Git/ShooterTEST/ShooterTEST/Content/caracter.png</File>
+    <File>D:/DROPBOX_COMUN/Dropbox/monogame/test projects/ShooterTEST/ShooterTEST/Content/bullet.PNG</File>
+    <File>D:/DROPBOX_COMUN/Dropbox/monogame/test projects/ShooterTEST/ShooterTEST/Content/caracter.png</File>
+    <File>D:/DROPBOX_COMUN/Dropbox/monogame/test projects/ShooterTEST/ShooterTEST/Content/caracter_arm.png</File>
   </SourceFiles>
 </SourceFileCollection>
