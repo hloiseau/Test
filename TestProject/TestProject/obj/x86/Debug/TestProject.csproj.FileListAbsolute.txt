@@ -52,3 +52,30 @@ D:\test_git\Test\TestProject\TestProject\obj\x86\Debug\TestProject.csprojResolve
 D:\test_git\Test\TestProject\TestProject\obj\x86\Debug\TestProject.csproj.CoreCompileInputs.cache
 D:\test_git\Test\TestProject\TestProject\obj\x86\Debug\TestProject.exe
 D:\test_git\Test\TestProject\TestProject\obj\x86\Debug\TestProject.pdb
+D:\DROPBOX_COMUN\Dropbox\monogame\test projects\TestProject\TestProject\bin\Windows\x86\Debug\Content\Area4Capsules4.xnb
+D:\DROPBOX_COMUN\Dropbox\monogame\test projects\TestProject\TestProject\bin\Windows\x86\Debug\Content\Area4PurpleBushColumn.xnb
+D:\DROPBOX_COMUN\Dropbox\monogame\test projects\TestProject\TestProject\bin\Windows\x86\Debug\Content\Bear.xnb
+D:\DROPBOX_COMUN\Dropbox\monogame\test projects\TestProject\TestProject\bin\Windows\x86\Debug\TestProject.exe
+D:\DROPBOX_COMUN\Dropbox\monogame\test projects\TestProject\TestProject\bin\Windows\x86\Debug\TestProject.pdb
+D:\DROPBOX_COMUN\Dropbox\monogame\test projects\TestProject\TestProject\bin\Windows\x86\Debug\MonoGame.Framework.dll
+D:\DROPBOX_COMUN\Dropbox\monogame\test projects\TestProject\TestProject\bin\Windows\x86\Debug\SharpDX.MediaFoundation.dll
+D:\DROPBOX_COMUN\Dropbox\monogame\test projects\TestProject\TestProject\bin\Windows\x86\Debug\SharpDX.dll
+D:\DROPBOX_COMUN\Dropbox\monogame\test projects\TestProject\TestProject\bin\Windows\x86\Debug\SharpDX.XAudio2.dll
+D:\DROPBOX_COMUN\Dropbox\monogame\test projects\TestProject\TestProject\bin\Windows\x86\Debug\SharpDX.DXGI.dll
+D:\DROPBOX_COMUN\Dropbox\monogame\test projects\TestProject\TestProject\bin\Windows\x86\Debug\SharpDX.Direct3D11.dll
+D:\DROPBOX_COMUN\Dropbox\monogame\test projects\TestProject\TestProject\bin\Windows\x86\Debug\SharpDX.Direct2D1.dll
+D:\DROPBOX_COMUN\Dropbox\monogame\test projects\TestProject\TestProject\bin\Windows\x86\Debug\SharpDX.XInput.dll
+D:\DROPBOX_COMUN\Dropbox\monogame\test projects\TestProject\TestProject\bin\Windows\x86\Debug\SharpDX.Direct3D9.dll
+D:\DROPBOX_COMUN\Dropbox\monogame\test projects\TestProject\TestProject\bin\Windows\x86\Debug\MonoGame.Framework.xml
+D:\DROPBOX_COMUN\Dropbox\monogame\test projects\TestProject\TestProject\bin\Windows\x86\Debug\SharpDX.MediaFoundation.xml
+D:\DROPBOX_COMUN\Dropbox\monogame\test projects\TestProject\TestProject\bin\Windows\x86\Debug\SharpDX.xml
+D:\DROPBOX_COMUN\Dropbox\monogame\test projects\TestProject\TestProject\bin\Windows\x86\Debug\SharpDX.XAudio2.xml
+D:\DROPBOX_COMUN\Dropbox\monogame\test projects\TestProject\TestProject\bin\Windows\x86\Debug\SharpDX.DXGI.xml
+D:\DROPBOX_COMUN\Dropbox\monogame\test projects\TestProject\TestProject\bin\Windows\x86\Debug\SharpDX.Direct3D11.xml
+D:\DROPBOX_COMUN\Dropbox\monogame\test projects\TestProject\TestProject\bin\Windows\x86\Debug\SharpDX.Direct2D1.xml
+D:\DROPBOX_COMUN\Dropbox\monogame\test projects\TestProject\TestProject\bin\Windows\x86\Debug\SharpDX.XInput.xml
+D:\DROPBOX_COMUN\Dropbox\monogame\test projects\TestProject\TestProject\bin\Windows\x86\Debug\SharpDX.Direct3D9.xml
+D:\DROPBOX_COMUN\Dropbox\monogame\test projects\TestProject\TestProject\obj\x86\Debug\TestProject.csprojResolveAssemblyReference.cache
+D:\DROPBOX_COMUN\Dropbox\monogame\test projects\TestProject\TestProject\obj\x86\Debug\TestProject.csproj.CoreCompileInputs.cache
+D:\DROPBOX_COMUN\Dropbox\monogame\test projects\TestProject\TestProject\obj\x86\Debug\TestProject.exe
+D:\DROPBOX_COMUN\Dropbox\monogame\test projects\TestProject\TestProject\obj\x86\Debug\TestProject.pdb

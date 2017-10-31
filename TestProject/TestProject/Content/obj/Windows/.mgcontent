@@ -4,8 +4,8 @@
   <Platform>Windows</Platform>
   <Config />
   <SourceFiles>
-    <File>C:/Users/hugo/DEV/TestProject/TestProject/Content/Area4Capsules4.png</File>
-    <File>C:/Users/hugo/DEV/TestProject/TestProject/Content/Area4PurpleBushColumn.png</File>
-    <File>C:/Users/hugo/DEV/TestProject/TestProject/Content/Bear.png</File>
+    <File>D:/DROPBOX_COMUN/Dropbox/monogame/test projects/TestProject/TestProject/Content/Area4Capsules4.png</File>
+    <File>D:/DROPBOX_COMUN/Dropbox/monogame/test projects/TestProject/TestProject/Content/Area4PurpleBushColumn.png</File>
+    <File>D:/DROPBOX_COMUN/Dropbox/monogame/test projects/TestProject/TestProject/Content/Bear.png</File>
   </SourceFiles>
 </SourceFileCollection>

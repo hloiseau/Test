@@ -133,7 +133,7 @@ namespace TestProject
                 if (_player._position.Y >= _startY)
                 //If it's farther than ground
                 {
-                    _player._position.Y = _startY;//Then set it on
+                    //_player._position.Y = _startY;//Then set it on
                     _jumping = false;
                 }
             }
