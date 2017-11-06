@@ -20,7 +20,12 @@ namespace TestProject
         Rectangle _rectBackground;
         ParallaxingBackground _bgLayer1;
         ParallaxingBackground _bgLayer2;
-        int i = 0;
+        Animation _playerAnimation;
+
+        bool _jumping; //Is the character jumping?
+        float _startY; 
+        float _jumpspeed; //startY to tell us //where it lands, jumpspeed to see how fast it jumps
+        
 
         public Game1()
         {
@@ -41,6 +46,7 @@ namespace TestProject
             _bgLayer1 = new ParallaxingBackground();
             _bgLayer2 = new ParallaxingBackground();
             _playerMoveSpeed = 8.0f;
+            
             base.Initialize();
         }
 
@@ -54,16 +60,20 @@ namespace TestProject
             _spriteBatch = new SpriteBatch(GraphicsDevice);
             // Load the player resources
 
-            Animation playerAnimation = new Animation();
+            _playerAnimation = new Animation();
             Texture2D playerTexture = Content.Load<Texture2D>("Bear");
-            playerAnimation.Initialize(playerTexture, Vector2.Zero, 32, 32, 0, 1, 4, 100, Color.White, 2f, true);
+            _playerAnimation.Initialize(playerTexture, Vector2.Zero, 32, 32, 0, 1, 4, 100, Color.White, 2f, true);
             Vector2 playerPosition = new Vector2(GraphicsDevice.Viewport.TitleSafeArea.X, GraphicsDevice.Viewport.TitleSafeArea.Y + GraphicsDevice.Viewport.TitleSafeArea.Height / 2);
-            _player.Initialize(playerAnimation, playerPosition);
+            _player.Initialize(_playerAnimation, playerPosition);
             // Load the parallaxing background
             _bgLayer1.Initialize(Content, "Area4Capsules4", GraphicsDevice.Viewport.Width, GraphicsDevice.Viewport.Height, -1);
             _bgLayer2.Initialize(Content, "Area4PurpleBushColumn", GraphicsDevice.Viewport.Width, GraphicsDevice.Viewport.Height, -2);
 
             _mainBackground = Content.Load<Texture2D>("Area4PurpleBushColumn");
+
+            _startY = GraphicsDevice.Viewport.Height;//Starting position
+            _jumping = false;//Init jumping to false
+            _jumpspeed = 0;//Default no speed
         }
 
         /// <summary>
@@ -77,31 +87,45 @@ namespace TestProject
 
         private void PlayerUpdate(GameTime gameTime)
         {
+            int ori = 0;
             _player.Update(gameTime);
             if (_currentKeyboardState.IsKeyDown(Keys.Left) || _currentKeyboardState.IsKeyDown(Keys.Q))
             {
                 _player._position.X -= _playerMoveSpeed / 2;
+                ori = 3;
             }
             if (_currentKeyboardState.IsKeyDown(Keys.Right) || _currentKeyboardState.IsKeyDown(Keys.D))
             {
                 _player._position.X += _playerMoveSpeed / 2;
+                ori = 1;
             }
             if (_currentKeyboardState.IsKeyDown(Keys.Up) || _currentKeyboardState.IsKeyDown(Keys.Z))
             {
                 _player._position.Y -= _playerMoveSpeed;
             }
-            if (_currentKeyboardState.IsKeyDown(Keys.Space))
+
+            if (_jumping)
             {
-                if (i < 10)
+                _player._position.Y += _jumpspeed;//Making it go up
+                _jumpspeed += 1;//Some math (explained later)
+                if (_player._position.Y >= _startY)
+                //If it's farther than ground
                 {
-                    _player._position.Y -= _playerMoveSpeed;
-                    i++;
-                }
-                else
-                {
-                    i--;
+                    _player._position.Y = _startY;//Then set it on
+                    _jumping = false;
                 }
             }
+            else
+            {
+                if (_currentKeyboardState.IsKeyDown(Keys.Space))
+                {
+                    _jumping = true;
+                    _jumpspeed = -25;//Give it upward thrust
+                }
+            }
+
+            _playerAnimation.CurrentFrameLin = ori;
+
             _player._position.Y += _playerMoveSpeed / 2;
 
             _player._position.X = MathHelper.Clamp(_player._position.X, _player.Width, GraphicsDevice.Viewport.Width - _player.Width);

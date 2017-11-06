@@ -23,7 +23,7 @@ namespace TestProject
         int _frameCount;
 
         // The index of the current frame colone we are displaying
-        int _currentFrameLin;
+        public int _currentFrameLin;
 
         // The index of the current frame  we are displaying
         int _currentFrameCol;
@@ -137,6 +137,11 @@ namespace TestProject
         {
             get { return _position; }
             set { _position = value; }
+        }
+        internal int CurrentFrameLin
+        {
+            get { return _currentFrameLin; }
+            set { _currentFrameLin = value; }
         }
     }
 }
